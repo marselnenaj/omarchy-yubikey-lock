@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "yubikey.lock",
   "name": "YubiKey Lock Screen",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "marselnenaj",
   "description": "Session lock with selected key/PIN, password and fingerprint PAM conversations.",
   "omarchy": {

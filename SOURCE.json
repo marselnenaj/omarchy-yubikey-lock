@@ -1,12 +1,12 @@
 {
   "repository": "https://github.com/marselnenaj/omarchy-yubikey",
-  "ref": "v0.3.0",
+  "ref": "v0.6.0",
   "sourceDirectory": "plugins/yubikey.lock",
   "sha256": {
-    "manifest.json": "574492c21a2a5c0ea5805a86d385ff45f4db83d2331c6356f4e53e07852c281a",
-    "Service.qml": "f59ca2fae227a3ce2473da22e6038eff82e4edf7d0e4f366362c0b8b9c6b058f",
-    "LockView.qml": "2fbc17a244067e2c916d62410087e48a76bafca4a6438ee6e29632f9bcb7aaea",
-    "Translations.qml": "9ae2e8557276964d384648f1c65d6e0e353ef5ea45eb24b9a30bad3194c1e294",
+    "manifest.json": "6d01964e8132a90d614f5ccd3221952924d714f443845eab4d3f81a4a5dbcbe7",
+    "Service.qml": "de8a381bc39517131fb78bb2799734bd3ae6e3faeff76745add10f2fcc639545",
+    "LockView.qml": "97ac3f30d662b4b4cda2df9296e3fea58ac58c0025ac55e54356c7f37d9e4878",
+    "Translations.qml": "cf565bf9301bee026b0177c353c8fa8ca0a0277a9a9812a2838e2147c38f55ef",
     "Locale.js": "817da8fc3185c7c09e36d1d18fe0099be6f9af7dfb9aa7eecf6ed14d90727ea0",
     "i18n/ar.json": "ca7dafe3ca883a87b276803ce0b4c86ee5eadc6c23395dcceab6a8da04406eb9",
     "i18n/bg.json": "6ee3cbfe232a372932263ab518bae55c24491a4f50ce59dfe62b4e8073556d2b",

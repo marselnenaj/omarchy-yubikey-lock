@@ -1,12 +1,15 @@
 import QtQuick
 import qs.Commons
 import qs.Commons as Commons
+// Omarchy 4.5 exports its own Commons.Translations, which an unqualified
+// "Translations" would resolve to; this directory's loader must win.
+import "." as Local
 import qs.Ui
 
 Item {
   id: root
 
-  Translations { id: strings }
+  Local.Translations { id: strings }
   LayoutMirroring.enabled: strings.rightToLeft
   LayoutMirroring.childrenInherit: true
 

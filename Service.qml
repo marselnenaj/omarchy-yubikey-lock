@@ -6,11 +6,14 @@ import Quickshell.Services.Pam
 import Quickshell.Wayland
 import qs.Commons
 import qs.Commons as Commons
+// Omarchy 4.5 exports its own Commons.Translations, which an unqualified
+// "Translations" would resolve to; this directory's loader must win.
+import "." as Local
 
 Item {
   id: root
 
-  Translations { id: strings }
+  Local.Translations { id: strings }
 
   property var shell: null
   property string omarchyPath: ""

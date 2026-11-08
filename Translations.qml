@@ -3,11 +3,11 @@ import Quickshell
 import Quickshell.Io
 import "Locale.js" as Locale
 
-// Omarchy 4.5 supplies Commons.Translations. The local loader keeps the same
-// catalogs usable on older supported shells, without changing the host config.
+// Use one language source for text, digits and layout on every shell version.
+// A native loader may choose English when our locale fallback chose another
+// language, so do not layer its English catalog over the resolved local one.
 QtObject {
   id: root
-  property var nativeTranslations: null
   readonly property string configHome: Quickshell.env("XDG_CONFIG_HOME") || Quickshell.env("HOME") + "/.config"
   readonly property var registry: Locale.parse(registryFile.text())
   readonly property string language: Locale.normalize(Quickshell.env("OMARCHY_YUBIKEY_LANGUAGE") || languageFile.text() ||
@@ -23,23 +23,12 @@ QtObject {
 
   function t(source, values) {
     var template = translated[source] || baseStrings[source] || english[source] || source
-    if (nativeTranslations) template = nativeTranslations.t(source, template)
     return Locale.render(template, values)
   }
 
   function number(value) {
     var zero = (registry[language] || {}).zeroDigit || "0"
     return String(value).replace(/[0-9]/g, function(digit) { return String.fromCharCode(zero.charCodeAt(0) + Number(digit)) })
-  }
-
-  Component.onCompleted: {
-    if (Quickshell.env("OMARCHY_YUBIKEY_LANGUAGE")) return
-    try {
-      nativeTranslations = Qt.createQmlObject('import QtQuick; import qs.Commons as Commons; Commons.Translations {}', root, "yubikey-native-translations")
-      nativeTranslations.directory = Qt.resolvedUrl("i18n")
-    } catch (error) {
-      // Older hosts do not export Commons.Translations; use the local loader.
-    }
   }
 
   property FileView languageFile: FileView {
